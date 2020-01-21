@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        let day = prompt("Type day of your birthday:",1);
+        let month = prompt("Type month of your birthday:",1);
+        let year = prompt("Type year of your birthday:",2000);
+
+        let birthday = new Date(parseInt(year),parseInt(month)-1,parseInt(day));
+
+
+        let seconds = parseInt(prompt("Type a number of seconds:",0));
+         
+        let nextDate = new Date(birthday);
+        nextDate.setDate(birthday.getDate() + seconds/86400);
+        
+        let age = nextDate.getFullYear() - birthday.getFullYear();
+
+    </script>
+
+</head>
+<body>
+    <script>
+        document.writeln(`<b>Birthday: </b>${birthday}</br>`);
+        document.writeln(`<b>Age:  </b>${age}</br>`);
+        document.writeln(`<b>Future Date:  </b>${nextDate}</br>`);
+    </script>
+</body>
+</html>

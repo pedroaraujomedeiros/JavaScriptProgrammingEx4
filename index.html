@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="app.js"></script>
+    <script>
+        alert('This is from embedded Javascript');
+        let a = prompt("Value  1:",0);
+        let b = prompt("Value  2:",0);
+        let c = a + b;
+        alert(c);
+        console.log(c);
+
+        let d = parseInt(a);
+        let e = parseInt(b);
+        let f = d + e;
+        alert(f);
+        
+        let isTheInputNumeric = prompt("Enter an alpha character");
+    </script>
+</head>
+<body>
+    <h1>
+        HTML and Javascript Exercise
+        
+    </h1>
+    <script>
+        document.writeln(`<p>The input <strong>${isTheInputNumeric}</strong> is not numeric, true or false?</p>`)
+        document.writeln(`<p>${isNaN(isTheInputNumeric)}</p>`)
+        document.writeln(`<p>My current url is <em>${window.location}</em></p>`)
+    </script>
+</body>
+</html>
