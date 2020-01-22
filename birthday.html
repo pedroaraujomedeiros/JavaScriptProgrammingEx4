@@ -11,10 +11,20 @@
         let year = prompt("Type year of your birthday:",2000);
 
         let birthday = new Date(parseInt(year),parseInt(month)-1,parseInt(day));
-
-
+        
         let seconds = parseInt(prompt("Type a number of seconds:",0));
          
+        try{
+            if(isNaN(day + month + year + seconds)){
+                throw new Error('Invalid Data');
+            }
+            
+        }catch(error){
+            alert(error.message);
+            window.location = window.location;
+
+        }
+
         let nextDate = new Date(birthday);
         nextDate.setDate(birthday.getDate() + seconds/86400);
         
@@ -26,13 +36,10 @@
 <body>
     <script>
         document.writeln(`<b>Birthday: </b>${birthday}</br>`);
+        document.writeln(`<b>Secondes provided:  </b>${seconds}</br>`);
         document.writeln(`<b>Age:  </b>${age}</br>`);
         document.writeln(`<b>Future Date:  </b>${nextDate}</br></br>`);
         document.writeln(`<b>#########################</b></br></br>`);
-        document.writeln(`<b>Is a valid day:  </b>${isNaN(day)}</br>`);
-        document.writeln(`<b>Is a valid month:  </b>${isNaN(month)}</br>`);
-        document.writeln(`<b>Is a valid year:  </b>${isNaN(year)}</br>`);
-        document.writeln(`<b>Is a valid number of seconds:  </b>${isNaN(seconds)}</br>`);
     </script>
 </body>
 </html>
